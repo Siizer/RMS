@@ -1,3 +1,21 @@
+document.getElementById('toggle-button').addEventListener('click', function () {
+    var body = document.body;
+
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        d3.select("#rectFrame").style("stroke", "black")
+        document.getElementsByClassName("bxs-sun")[0].classList.remove("bxs-sun");
+        document.getElementsByClassName("bx")[0].classList.add("bxs-moon");
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        d3.select("#rectFrame").style("stroke", "white")
+        document.getElementsByClassName("bxs-moon")[0].classList.remove("bxs-moon");
+        document.getElementsByClassName("bx")[0].classList.add("bxs-sun");
+    }
+});
+
 const waveDisplay = d3.select("#waveDisplay");
 const peakValueSlider = document.getElementById("peakValueSlider");
 const rmsDisplay = document.getElementById("rmsDisplay");
