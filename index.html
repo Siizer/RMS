@@ -9,15 +9,18 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
-<body>
-    <div style="display: flex;">
-        <div id="waveDisplay" style="width: 600px; height: 300px;"></div>
-        <div style="width: 100px; margin-left: 20px;">
-            <label for="peakValueSlider">Peak Value: <span id="peakValueDisplay">2</span></label>
-            <input type="range" id="peakValueSlider" min="1" max="10" value="2">
-            <p>RMS Value: <span id="rmsDisplay"></span></p>
-            <label for="toggleSquare">Show Squared Wave:</label>
-            <input type="checkbox" id="toggleSquare" checked>
+<body class="dark-mode">
+	<button id="toggle-button"><i type="solid" class='bx bxs-sun'></i></button>
+	<div id="main-container">
+        <div style="display: flex;">
+            <div id="waveDisplay" style="width: 600px; height: 300px;"></div>
+            <div style="width: 100px; margin-left: 20px;">
+                <label for="peakValueSlider">Peak Value: <span id="peakValueDisplay">2</span></label>
+                <input type="range" id="peakValueSlider" min="1" max="10" value="2">
+                <p>RMS Value: <span id="rmsDisplay"></span></p>
+                <label for="toggleSquare">Show Squared Wave:</label>
+                <input type="checkbox" id="toggleSquare" checked>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
