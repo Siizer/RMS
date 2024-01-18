@@ -36,12 +36,20 @@ function drawWave(peakValue, showSquare) {
         .domain([0, 2 * Math.PI])
         .range([margin.left, width - margin.right]);
 
+    const xAxis = d3.axisBottom(xScale).ticks(4)
+        .tickFormat((d) => {
+            if (d === Math.PI / 2) return "π/2";
+            if (d === Math.PI) return "π";
+            if (d === 3 * Math.PI / 2) return "3π/2";
+            if (d === 2 * Math.PI) return "2π";
+            return "";
+        });    
+    
     // Adjusting the yScale domain based on whether the squared line is shown
     const yScale = d3.scaleLinear()
         .domain(showSquare ? [-peakValue * peakValue, peakValue * peakValue] : [-peakValue, peakValue])
         .range([height - margin.bottom, margin.top]);
 
-    const xAxis = d3.axisBottom(xScale).ticks(10);
     svg.append("g")
         .attr("transform", `translate(0,${height / 2})`)
         .call(xAxis);
