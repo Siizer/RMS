@@ -59,6 +59,9 @@ function drawWave(peakValue, showSquare) {
 
     const yAxis = svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
+        .transition()
+        .duration(500)
+        .ease(d3.easeLinear)
         .call(d3.axisLeft(yScale).ticks(10));
 
     const line = d3.line()
@@ -85,6 +88,9 @@ function drawWave(peakValue, showSquare) {
             .attr("stroke", "red")
             .attr("stroke-dasharray", "5,5")
             .attr("stroke-width", 2)
+            .transition()
+            .duration(500)
+            .ease(d3.easeLinear)
             .attr("d", squareLine);
     }
 
