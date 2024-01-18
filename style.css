@@ -78,6 +78,10 @@ button:hover:after{
   width: 100%;
 }
 
+#main-container {
+  height: 100vh;
+  border:1px solid black;
+}
 
 #waveDisplay {
     width: 600px;
